@@ -8,16 +8,15 @@ outFile = sys.argv[3]
 
 dim = -1
 
-f = open(vectorFile, 'r').read().lower().split('\n')
+f = open(vectorFile, 'r').read().lower().strip().split('\n')
 vectors = {}
 for line in f:
     line = line.split()
     vectors[line[0]] = [float(q) for q in line[1:]]
     if dim == -1:
         dim = len(line) - 1
-f.close()
 
-vocab = open(vocabFile).read().lower().split('\n')
+vocab = open(vocabFile).read().lower().strip().split('\n')
 
 #write the vectors in the same order as vocab
 g = open(outFile, 'w')
