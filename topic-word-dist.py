@@ -21,3 +21,4 @@ for topic, words in topicDic.items():
     words = sorted(words.items(), key=itemgetter(1), reverse=True)
     print ' '.join([vocab[int(a)] for a, b in words[:K]])
 
+#python topic-word-dist.py data/nips/corpus.train output_old/D50/I1/K20/GLDA/Feb_27_2016_11.41.15/table_assignments.txt 10
